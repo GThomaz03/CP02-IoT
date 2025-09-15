@@ -10,8 +10,8 @@ Peso: **40% da nota do CP2**
 
 ```
 /redes-neurais-keras
-│── exercicio1_classificacao.ipynb # Classificação Multiclasse (Wine Dataset)
-│── exercicio2_regressao.ipynb # Regressão (California Housing)
+│── CP02-1.ipynb # Classificação Multiclasse (Wine Dataset)
+│── CP02-2.ipynb # Regressão (California Housing)
 │── README.md # Instruções e resultados
 ```
 
@@ -95,3 +95,4 @@ E executar:
 Integarntes:
 
 - Gabriel Alves Thomaz - RM558637
+
