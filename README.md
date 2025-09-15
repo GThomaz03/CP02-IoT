@@ -50,8 +50,8 @@ Peso: **40% da nota do CP2**
 
 ### 1. Clonar o repositório
 ```bash
-git clone https://github.com/SEU_USUARIO/redes-neurais-keras.git
-cd redes-neurais-keras
+git clone https://github.com/GThomaz03/CP02-IoT.git
+cd CP02-IoT
 ```
 ### 2. Criar ambiente virtual (opcional, mas recomendado)
 ```bash
@@ -71,7 +71,6 @@ jupyter notebook
 E executar:
 - exercicio1_classificacao.ipynb
 - exercicio2_regressao.ipynb
-
 
 ---
 📊 Resultados Esperados
@@ -94,4 +93,5 @@ E executar:
 
 ---
 Integarntes:
+
 - Gabriel Alves Thomaz - RM558637
