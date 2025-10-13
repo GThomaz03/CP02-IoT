@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teste do Modelo Teachable Machine</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.21.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      background: #f4f4f4;
+      padding: 30px;
+    }
+    #preview {
+      margin-top: 20px;
+      max-width: 300px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    }
+    #label-container div {
+      background: white;
+      margin: 8px auto;
+      width: fit-content;
+      padding: 10px 15px;
+      border-radius: 8px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>Classificação com Teachable Machine</h1>
+
+  <input type="file" id="imageUpload" accept="image/*" />
+  <br><br>
+  <img id="preview" />
+  <br><br>
+  <button onclick="predict()">Fazer Predição</button>
+
+  <div id="label-container"></div>
+
+  <script>
+    let model, labelContainer, maxPredictions, imageElement;
+
+    // Altere este caminho para o local onde seu modelo está
+    const modelURL = "modelo/";
+
+    async function init() {
+      const modelURLFull = modelURL + "model.json";
+      const metadataURL = modelURL + "metadata.json";
+      model = await tmImage.load(modelURLFull, metadataURL);
+      maxPredictions = model.getTotalClasses();
+      labelContainer = document.getElementById("label-container");
+    }
+
+    // Carregar imagem selecionada
+    document.getElementById("imageUpload").addEventListener("change", function (event) {
+      const file = event.target.files[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = function (e) {
+        const img = document.getElementById("preview");
+        img.src = e.target.result;
+        imageElement = img;
+      };
+      reader.readAsDataURL(file);
+    });
+
+    async function predict() {
+      if (!model) await init();
+      if (!imageElement) {
+        alert("Selecione uma imagem primeiro!");
+        return;
+      }
+
+      const prediction = await model.predict(imageElement);
+      labelContainer.innerHTML = "";
+      prediction.sort((a, b) => b.probability - a.probability);
+      prediction.forEach(p => {
+        const div = document.createElement("div");
+        div.innerHTML = `${p.className}: ${(p.probability * 100).toFixed(2)}%`;
+        labelContainer.appendChild(div);
+      });
+    }
+
+    init(); // carrega o modelo assim que abrir a página
+  </script>
+</body>
+</html>
