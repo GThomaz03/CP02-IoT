@@ -12,6 +12,8 @@ Peso: **40% da nota do CP2**
 /redes-neurais-keras
 │── CP02-1.ipynb # Classificação Multiclasse (Wine Dataset)
 │── CP02-2.ipynb # Regressão (California Housing)
+│── teachable-machine-1
+│── teachable-machine-2
 │── README.md # Instruções e resultados
 ```
 
@@ -96,3 +98,13 @@ Integarntes:
 
 - Gabriel Alves Thomaz - RM558637
 
+---
+# Parte 2
+
+links dos datasets:
+- https://app.roboflow.com/teste-atffo/coco128-iugjx-c5qje/browse?queryText=&pageSize=50&startingIndex=0&browseQuery=true
+- https://universe.roboflow.com/new-workspace-s0sid/bus-yqkys/dataset/2
+- https://universe.roboflow.com/yu-cttti/motorcycle-a1sts/dataset/2
+
+---
+Teachable machine foi treinado com duas classes, ônibus e motos utilizando os datasest citados acima e testado comuma imagem que não foi utilizada no treinamento 
