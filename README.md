@@ -115,6 +115,7 @@ Teachable machine foi treinado com duas classes, ônibus e motos utilizando os d
 
 ---
 ⚙️ Como executar o projeto localmente
+
 1️⃣ — Clonar ou baixar o repositório
 
 Baixe o projeto completo ou clone o repositório:
@@ -152,5 +153,6 @@ Abra no seu navegador o endereço exibido no terminal
 Clique em Escolher arquivo e selecione uma imagem.
 
 Clique em Fazer Predição.
+
 
 Veja na tela as probabilidades de cada classe detectada. 🎉
