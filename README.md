@@ -12,8 +12,12 @@ Peso: **40% da nota do CP2**
 /redes-neurais-keras
 │── CP02-1.ipynb # Classificação Multiclasse (Wine Dataset)
 │── CP02-2.ipynb # Regressão (California Housing)
-│── teachable-machine-1
-│── teachable-machine-2
+├── front-teacheblemachine/ # teachable machine funcionandno para identificação de obinus e motos
+│   ├── index.html
+│   ├── modelo/
+│   │   ├── model.json
+│   │   ├── metadata.json
+│   │   └── weights.bin
 │── README.md # Instruções e resultados
 ```
 
@@ -108,3 +112,45 @@ links dos datasets:
 
 ---
 Teachable machine foi treinado com duas classes, ônibus e motos utilizando os datasest citados acima e testado comuma imagem que não foi utilizada no treinamento 
+
+---
+⚙️ Como executar o projeto localmente
+1️⃣ — Clonar ou baixar o repositório
+
+Baixe o projeto completo ou clone o repositório:
+
+git clone https://github.com/seuusuario/seu-repositorio.git
+
+
+Em seguida, entre na pasta do frontend:
+``` bash
+  cd front-teacheblemachine
+```
+
+---
+
+2️⃣ — Iniciar o servidor local
+
+O projeto usa apenas HTML e JavaScript, mas para carregar o modelo é necessário rodar via servidor local (por segurança do navegador).
+
+Você pode usar o comando abaixo:
+
+``` bash
+npx serve .
+```
+
+---
+
+3️⃣ — Acessar no navegador
+
+Abra no seu navegador o endereço exibido no terminal
+
+---
+
+4️⃣ — Testar o modelo
+
+Clique em Escolher arquivo e selecione uma imagem.
+
+Clique em Fazer Predição.
+
+Veja na tela as probabilidades de cada classe detectada. 🎉
